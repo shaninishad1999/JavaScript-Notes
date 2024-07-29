@@ -16,12 +16,12 @@
 // console.log(date.toJSON())
 
 
-// setInterval(()=>{
-//     let date=new Date()
-//     let time=date.toLocaleTimeString()
-//     let st=document.getElementById('head')
-//     st.innerHTML=time
-// },1000)
+setInterval(()=>{
+    let date=new Date()
+    let time=date.toLocaleTimeString()
+    let st=document.getElementById('head')
+    st.innerHTML=time
+},1000)
 
 
 
