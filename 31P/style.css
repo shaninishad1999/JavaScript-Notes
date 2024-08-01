@@ -1,0 +1,17 @@
+.image-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#image {
+    width: 300px; /* Adjust the size as needed */
+    height: auto;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
