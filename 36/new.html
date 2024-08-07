@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // let newarr =ar.map((t)=>{return t*t})
+        // console.log(newarr)
+        //  array of object
+        //   multiple data store karne ke liye we use array of object
+        let employee = [
+            { name: "Hari", id: 25, sal: 1200 },
+            { name: "Mohan", id: 21, sal: 1300 },
+            { name: "Rakesh", id: 23, sal: 1400 },
+            { name: "Mukesh", id: 24, sal: 1500 },
+            { name: "Rakul", id: 25, sal: 1600 },
+        ]
+
+        // let p = employee.map((k) => {
+        //     return k.name;
+        // });
+        // let a = employee.map((k) => {
+        //     return k.id;
+        // });
+        // let b = employee.map((k) => {
+        //     return k.sal;
+        // });
+
+
+        // console.log(p);
+        // console.log(a);
+        // console.log(b);
+        // console.log(employee[0])
+
+        let ob={name:"Kari",id:26,sal:1800}
+        let ob1={name:"Rari",id:27,sal:1880}
+        employee.push(ob, ob1);
+        employee.pop()
+
+        employee.unshift(ob);
+        employee.shift();
+
+          let d = employee.filter((e) => { return e.id > 22 })
+        console.log(d)
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
