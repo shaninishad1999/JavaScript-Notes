@@ -1,1 +1,1 @@
-Hi My Name is Shanideval
+Hi My Name is Shanideval this is javascript notes
