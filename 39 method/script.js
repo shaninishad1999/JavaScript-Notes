@@ -21,3 +21,7 @@ console.log(stringArr);
 const myarray=arr.join(' * ');
 console.log(myarray);
 
+function rand(min,max){
+    return Math.floor(Math.random()*(max-min+1)+min)
+}
+rand(30, 50)
