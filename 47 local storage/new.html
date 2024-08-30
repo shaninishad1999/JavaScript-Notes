@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        localStorage.clear();
+        localStorage.setItem("Name", "John Doe");
+        localStorage.setItem("Email", "admin@gmail.com");
+        let name = localStorage.getItem("name");
+        let email = localStorage.getItem("email");
+        document.write(name + " " + "<br>" + email);
+        localStorage.removeItem("name");
+    </script>
+</body>
+ 
+</html>
