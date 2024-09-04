@@ -1,0 +1,25 @@
+{
+    "employees":[
+        {
+            "id":1,
+            "employeeno":1,
+            "name":"John",
+            "salary":34000,
+            "city":"Bhopal"
+        },
+        {
+            "id":2,
+            "employeeno":2,
+            "name":"Shani",
+            "salary":34040,
+            "city":"Up"
+        },
+        {
+            "id":3,
+            "employeeno":3,
+            "name":"Ankush",
+            "salary":340402,
+            "city":"Delhi"
+        }
+    ]
+}
