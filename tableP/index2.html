@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Example</title>
+</head>
+<body>
+    <p id="count">4050</p>
+    <button onclick="increaseCount()">Increase Count</button>
+
+    <script>
+        // Function to increase the count
+        function increaseCount() {
+            // Get the element with the ID 'count'
+            var countElement = document.getElementById('count');
+
+            // Get the current count value, convert it to an integer
+            var currentCount = parseInt(countElement.textContent, 10);
+
+            // Increase the count
+            var newCount = currentCount + 1;
+
+            // Update the text content of the element
+            countElement.textContent = newCount;
+        }
+    </script>
+</body>
+</html>

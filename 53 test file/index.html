@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 50px;
+            width: 400px;
+            border: 2px solid blue;
+            text-align: center;
+            align-content: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="add()">Add</button> <br>
+ 
+<div class="container"><br>
+    <div class="box">
+        <label for="subject">Enter Subject :</label>
+        <input type="text" id="subject">
+        &nbsp;&nbsp;<button onclick="del(this)">Delete</button>
+    </div>
+</div>
+
+<script>
+    function add() {
+        // Get the container
+        const container = document.querySelector('.container');
+        
+        // Get the box you want to clone
+        const box = document.querySelector('.box');
+        
+        // Clone the box
+        const newBox = box.cloneNode(true); // true means it will also clone child elements
+        
+        // Update the Delete button's onclick to use the new function
+        const deleteButton = newBox.querySelector('button');
+        deleteButton.setAttribute('onclick', 'del(this)');
+        
+        // Append the cloned box to the container
+        container.appendChild(newBox);
+    }
+
+    function del(button) {
+        // Get the parent .box element of the button that was clicked
+        const boxToRemove = button.parentNode;
+        
+        // Get the container
+        const container = document.querySelector('.container');
+        
+        // Remove the .box element from the container
+        container.removeChild(boxToRemove);
+    }
+</script>
+
+</body>
+</html>
