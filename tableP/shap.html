@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 200px;
+        height: 300px;
+        border: 2px solid blue;
+        background-color: aquamarine;
+    }
+</style>
+<body>
+    <button onclick="fun()">click</button>
+<div id="box"></div>
+
+<script>
+    function fun(){
+        const k=document.getElementById("box");
+        k.style.borderRadius="50%";
+        k.style.backgroundColor="yellow";
+    }
+    let arr=[2,4,5,6,8];
+
+    console.log(arr);
+    let newArray = arr.map(x => x * 2);
+    console.log(newArray);
+
+    // for(let i=0;i<newArray.length;i++){
+    //     console.log(newArray[i]);
+    // }
+
+
+
+</script>
+
+</body>
+</html>
