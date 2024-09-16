@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+<!-- 
+click
+hide
+show
+mouseenter
+mousehover
+mouseFocus
+mouseleave
+mousebluer
+
+
+
+-->
+<h1 class="hide"> hide  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, incidunt.</h1>
+<h1 class="show" style="display: none;"> show Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, incidunt.</h1>
+<h1 class="mouseenter">mouseenter  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, incidunt.</h1>
+<h1 class="mousebluer">mousebluer  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, incidunt.</h1>
+<h1 class="mouseFocus">mouseFocus           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, incidunt.</h1>
+<h1 class="mouseleave">mouseleave  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, incidunt.</h1>
+<h1 class="mousebluer">mousebluer      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, incidunt.</h1>
+
+
+<button id="hide">hide</button>
+<button id="show">show</button>
+<button id="mouseenter">mouseenter</button>
+<button id="mousehover">mousehover</button>
+<button id="mouseleave">mouseleave</button>
+<button id="mousebluer">mousebluer</button>
+<script>
+
+$('#hide').click(function(){
+    $('.hide').hide();
+})
+$('#show').click(function(){
+    $('.show').show();
+})
+$('#mouseenter').click(function(){
+    $('.mouseenter').mouseenter();
+    alert("mouserEnter")
+})
+$('#mousehover').click(function(){
+    $('.mousehover').mouseover();
+    alert("mouserhobver")
+})
+$('#mouseleave').click(function(){
+    $('.mouseleave').mouseleave();
+    alert("mouserleave")
+})
+$('#mousebluer').click(function(){
+    $('.mousebluer').m
+})
+
+</script>
+</body>
+</html>

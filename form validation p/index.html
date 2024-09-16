@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+</head>
+
+<body>
+
+    <form onsubmit="return saveData()">
+        <label for="firstName">First Name: </label>
+        <input type="text" id="fname"> <br>
+        
+        <label for="lastName">Last Name: </label>
+        <input type="text" id="lname"> <br>
+        
+        <label for="email">Email: </label>
+        <input type="text" id="email"> <br>
+        
+        <label for="mobile">Mobile: </label>
+        <input type="text" id="number"> <br>
+        
+        <label for="psd">Password: </label>
+        <input type="password" id="psd"> <br>
+        
+        <label for="cpsd">Confirm Password: </label>
+        <input type="password" id="cpsd"><br>
+
+        <button type="submit">Submit Data</button>
+    </form>
+
+    <!-- Div to display output after form submission -->
+    <div id="output"></div>
+
+    <script>
+        function saveData() {
+            let firstName = document.getElementById("fname").value.trim();
+            let lastName = document.getElementById("lname").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let number = document.getElementById("number").value.trim();
+            let psd = document.getElementById("psd").value.trim();
+            let cpsd = document.getElementById("cpsd").value.trim();
+            let output = document.getElementById("output"); // For displaying messages
+
+            // Clear previous output
+            output.innerHTML = "";
+
+            if (firstName === "") {
+                alert("Please enter First Name");
+                return false;
+            } else if (lastName === "") {
+                alert("Please enter Last Name");
+                return false;
+            } else if (email === "" || !email.includes('@')) {
+                alert("Please enter a valid Email address");
+                return false;
+            } else if (isNaN(number) || number.length !== 10 || number === "") {
+                alert("Please enter a valid 10-digit Mobile Number");
+                return false;
+            } else if (psd.length < 8) {
+                alert("Password must be at least 8 characters long");
+                return false;
+            } else if (psd !== cpsd) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            // Display the data after successful validation
+            output.innerHTML = `
+                <h2>Form Submitted Successfully!</h2>
+                <p><strong>First Name:</strong> ${firstName}</p>
+                <p><strong>Last Name:</strong> ${lastName}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Mobile Number:</strong> ${number}</p>
+                <p><strong>Password:</strong> ${psd}</p>
+            `;
+
+            return false; // Prevent form submission and page reload
+        }
+    </script>
+</body>
+
+</html>

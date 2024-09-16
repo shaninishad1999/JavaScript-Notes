@@ -1,18 +1,18 @@
-// $(document).ready(function(){
-//     $("#hide").click(function(){
-//         $("p").hide(2000);
-//     });
-//     $("#hide").click(function(){
-//         $("p").show(2000);
-//     });
-// })
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide(2000);
+    });
+    $("#hide").click(function(){
+        $("p").show(2000);
+    });
+})
 
-// $(document).ready(function(){
+$(document).ready(function(){
 
-//     $('#show-hide').click(function(){
-//         $("p").toggle();
-//     });
-// });
+    $('#show-hide').click(function(){
+        $("p").toggle();
+    });
+});
 
 $("#fadein").click(function(){
     $(".box1").fadeIn();
