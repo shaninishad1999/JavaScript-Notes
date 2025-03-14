@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel with Navbar</title>
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: block;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* Carousel Styles */
+        .slider-container {
+            position: relative;
+            width: 800px;
+            height: 300px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .arrow:hover {
+            opacity: 1;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Carousel Section -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="https://via.placeholder.com/800x300?text=Slide+1" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/800x300?text=Slide+2" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/800x300?text=Slide+3" alt="Slide 3">
+            </div>
+        </div>
+        <!-- Arrows for navigation -->
+        <button class="arrow arrow-left">&#9664;</button>
+        <button class="arrow arrow-right">&#9654;</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevArrow = document.querySelector('.arrow-left');
+        const nextArrow = document.querySelector('.arrow-right');
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        // Function to show the current slide
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length; // Wrap around
+            const offset = currentSlide * -100; // Move slider by percentage
+            document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Next and Prev functionality using arrows
+        nextArrow.addEventListener('click', () => {
+            clearInterval(autoSlideInterval); // Stop auto slide when manual slide is used
+            showSlide(currentSlide + 1);
+            startAutoSlide(); // Restart the auto slide
+        });
+
+        prevArrow.addEventListener('click', () => {
+            clearInterval(autoSlideInterval);
+            showSlide(currentSlide - 1);
+            startAutoSlide();
+        });
+
+        // Auto-slide function
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                showSlide(currentSlide + 1); // Automatically move to next slide
+            }, 3000); // Slide every 3 seconds
+        }
+
+        // Initialize the carousel
+        showSlide(currentSlide);
+        startAutoSlide(); // Start auto-slide when the page loads
+    </script>
+</body>
+</html>
